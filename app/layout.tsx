@@ -10,8 +10,8 @@ const bricolage = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  title: "Converso",
-  description: "Real-time AI Teaching Platform",
+  title: "AssisTutor",
+  description: "A custom AI companion platform for students.",
 };
 
 export default function RootLayout({
