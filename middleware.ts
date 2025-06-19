@@ -1,11 +1,11 @@
-import { clerkMiddleware } from "@clerk/nextjs/server";
+import { authMiddleware } from "@clerk/nextjs";
 
-export default clerkMiddleware();
+export default authMiddleware();
 
+// Do NOT set runtime: "nodejs" anymore
 export const config = {
-  runtime: "nodejs", // 👈 this line fixes the Vercel Edge issue
   matcher: [
-    "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
+    "/((?!_next|.*\\..*).*)", // Match all routes except static files
     "/(api|trpc)(.*)",
   ],
 };
